@@ -12,11 +12,28 @@ section {
     left: 0;
     top: 0;
     font-family: "Rock 3d";
-    font-size: 4rem;
-    transform: rotate(-7deg) translate(100px, 140px);
+    font-size: 3vw;
+    transform: rotate(-7deg) translate(10%, 60%);
     opacity: 0.5;
+    animation-name: textWobble;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 .hidden {
     display: none;
+}
+
+span:hover {
+    font-family: "Protest Revolution";
+    color: #004d4a;
+}
+
+@keyframes textWobble {
+    0% {transform: rotate(-7deg) translate(10%, 60%);}
+    20% {transform: rotate(-7deg) translate(12%, 62%)};
+    40% {transform: rotate(-7deg) translate(13%, 63%)};
+    60% {transform: rotate(-7deg) translate(10%, 60%)};
+    80% {transform: rotate(-7deg) translate(7%, 57%)};
+    100% {transform: rotate(-7deg) translate(10%, 60%)};
 }
