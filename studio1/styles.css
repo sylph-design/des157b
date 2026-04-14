@@ -1,0 +1,22 @@
+body {
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    overflow: hidden;
+}
+
+section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: "Rock 3d";
+    font-size: 4rem;
+    transform: rotate(-7deg) translate(100px, 140px);
+    opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
