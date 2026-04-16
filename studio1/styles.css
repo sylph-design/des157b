@@ -33,10 +33,10 @@ span:hover {
 }
 
 @keyframes textWobble {
-    0% {transform: rotate(-7deg) translate(10%, 60%);}
-    20% {transform: rotate(-7deg) translate(12%, 62%)};
-    40% {transform: rotate(-7deg) translate(13%, 63%)};
-    60% {transform: rotate(-7deg) translate(10%, 60%)};
-    80% {transform: rotate(-7deg) translate(7%, 57%)};
-    100% {transform: rotate(-7deg) translate(10%, 60%)};
+    0% {transform: rotate(-7deg) translate(10%, 60%)}
+    20% {transform: rotate(-7deg) translate(12%, 62%)}
+    40% {transform: rotate(-7deg) translate(13%, 63%)}
+    60% {transform: rotate(-7deg) translate(10%, 60%)}
+    80% {transform: rotate(-7deg) translate(7%, 57%)}
+    100% {transform: rotate(-7deg) translate(10%, 60%)}
 }
