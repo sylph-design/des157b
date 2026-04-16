@@ -18,6 +18,9 @@ section {
     animation-name: textWobble;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hidden {
