@@ -1,0 +1,122 @@
+{
+    "point1" : {
+        "time" : "12am",
+        "bpm" : "71",
+        "activity" : "laying in bed"
+    },
+    "point2" : {
+        "time" : "1am",
+        "bpm" : "64",
+        "activity" : "went to sleep"
+    },
+    "point3" : {
+        "time" : "2am",
+        "bpm" : "63",
+        "activity" : "sleeping"
+    },
+    "point4" : {
+        "time" : "3am",
+        "bpm" : "64",
+        "activity" : "sleeping"
+    },
+    "point5" : {
+        "time" : "4am",
+        "bpm" : "64",
+        "activity" : "sleeping"
+    },
+    "point6" : {
+        "time" : "5am",
+        "bpm" : "59",
+        "activity" : "sleeping"
+    },
+    "point7" : {
+        "time" : "6am",
+        "bpm" : "62",
+        "activity" : "sleeping"
+    },
+    "point8" : {
+        "time" : "7am",
+        "bpm" : "63",
+        "activity" : "sleeping"
+    },
+    "point9" : {
+        "time" : "8am",
+        "bpm" : "86",
+        "activity" : "waking up to alarm"
+    },
+    "point10" : {
+        "time" : "9am",
+        "bpm" : "91",
+        "activity" : "speedwalking to bus"
+    },
+    "point11" : {
+        "time" : "10am",
+        "bpm" : "84",
+        "activity" : "sitting in class"
+    },
+    "point12" : {
+        "time" : "11am",
+        "bpm" : "86",
+        "activity" : "sitting in class"
+    },
+    "point13" : {
+        "time" : "12pm",
+        "bpm" : "94",
+        "activity" : "eating lunch"
+    },
+    "point14" : {
+        "time" : "1pm",
+        "bpm" : "83",
+        "activity" : "sitting in class"
+    },
+    "point15" : {
+        "time" : "2pm",
+        "bpm" : "79",
+        "activity" : "sitting in class"
+    },
+    "point16" : {
+        "time" : "3pm",
+        "bpm" : "112",
+        "activity" : "running for the bus"
+    },
+    "point17" : {
+        "time" : "4pm",
+        "bpm" : "85",
+        "activity" : "sitting at desk"
+    },
+    "point18" : {
+        "time" : "5pm",
+        "bpm" : "79",
+        "activity" : "sitting at desk"
+    },
+    "point19" : {
+        "time" : "6pm",
+        "bpm" : "82",
+        "activity" : "cooking dinner"
+    },
+    "point20" : {
+        "time" : "7pm",
+        "bpm" : "95",
+        "activity" : "eating dinner"
+    },
+    "point21" : {
+        "time" : "8pm",
+        "bpm" : "87",
+        "activity" : "sitting at desk"
+    },
+    "point22" : {
+        "time" : "9pm",
+        "bpm" : "84",
+        "activity" : "sitting at desk"
+    },
+    "point23" : {
+        "time" : "10pm",
+        "bpm" : "81",
+        "activity" : "sitting at desk"
+    },
+    "point24" : {
+        "time" : "11pm",
+        "bpm" : "78",
+        "activity" : "laying in bed"
+    }
+}
