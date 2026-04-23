@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(#cda1a1 1px, transparent 1px), linear-gradient(to right, #cda1a1 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-color: #fad6d6;
+    font-family: "Inconsolata";
+}
+
+header {
+    background-color: #f5e6df;
+    border-bottom: 2px solid #8f756d;
+    margin-top: 0;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#patientInfo {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+#ageHeight {
+    display: flex;
+    gap: 100px;
+}
+
+.point {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #823c61;
+}
