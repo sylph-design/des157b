@@ -48,6 +48,15 @@ h1 {
     background-color: #d16fa3;
 }
 
+.selected {
+    background-color: #d4198f;
+    height: 30px;
+    width: 30px;
+    transition: all 0.3s;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
 #timeline {
     display: flex;
     flex-direction: row;
