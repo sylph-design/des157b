@@ -1,0 +1,15 @@
+#map {
+    height: 1000px;
+}
+
+#spacer {
+    height: 500px;
+}
+
+p {
+    font-size: 40px;
+    color: black;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 400px;
+}
