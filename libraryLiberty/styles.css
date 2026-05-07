@@ -1,0 +1,52 @@
+body {
+    background-color: #403a31;
+    color: #fce7e6;
+    font-family: "Major Mono Display";
+}
+
+h1 {
+    position: absolute;
+    font-size: 120px;
+    margin: 0;
+    padding: 0;
+}
+
+#shapes {
+    left: 0px;
+    top: 10px;
+}
+
+#in {
+    left: -50px;
+    top: 240px;
+    font-size: 200px;
+}
+
+#motion {
+    left: 0px;
+    bottom: 50px;
+}
+
+img {
+    position: absolute;
+    right: 0px;
+}
+
+#canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a {
+    text-decoration: underline;
+}

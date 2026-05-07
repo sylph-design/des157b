@@ -6,21 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 
     <script src="./libraries/matter.js"></script>
-    <script type="module">
-        import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
     <script src="script.js" defer></script>
 
     <title>Library Liberty</title>
 </head>
 
 <body>
-    <h1>SHAPES</h1>
-    <h1>IN</h1>
-    <h1>MOTION</h1>
+    <img src="assets/wall.svg" alt="wall background">
+    <h1 id="shapes">SHAPES</h1>
+    <h1 id="in">IN</h1>
+    <h1 id="motion">MOTION</h1>
+    <div id="canvas"></div>
+
+    <footer>
+        <p>Made using <a>Matter JS</a> and <a>GSAP</a></p>
+    </footer>
 </body>
 
 </html>
