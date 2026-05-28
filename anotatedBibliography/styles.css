@@ -1,0 +1,20 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 50px;
+    background-color: bisque;
+}
+
+#backgroundColor {
+    background-color: antiquewhite;
+    padding: 30px 50px 30px 50px;
+    border-radius: 30px;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
