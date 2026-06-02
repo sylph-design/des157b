@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet"/>
 
+    <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" href="css/TripgoRouting.css" />
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
@@ -30,30 +32,47 @@
 <body>
     
     <main>
-        <!-- <div id="locationSearchOverlay">
+        <div id="locationSearchOverlay">
             <h1>What will it take to get to work today?</h1>
             <label>Location A</label>
-            <input type="text" list="locations">
-            <label>Location B</label>
-            <input type="text" list="locations">
-            <datalist id="locations">
-                <option>123 Street, City, State, 12345</option>
+            <br><input type="text" list="locationA" id="addressInputA">
+            <br><label>Location B</label>
+            <br><input type="text" list="locationB" id="addressInputB">
+            <datalist id="locationA">
+                <option>[HOME] 6525 Normandie Ave, Los Angeles, CA 90044</option>
+            </datalist>
+            <datalist id="locationB">
+                <option>[WORK] 707 S Broadway, Los Angeles, CA 90014</option>
             </datalist>
             <div id="buttonAlignment">
-                <button>Find Routes</button>
-            </div>
-        </div> -->
-        <div id="mapPopups">
-            <div class="popup">
-                <p><span class="red">Red roads</span> are freeways.</p>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="popup">
-                <p><span class="orange">Orange roads</span> are main roads.</p>
-                <i class="fa-solid fa-xmark"></i>
+                <button id="findRoutesButton">Find Routes</button>
             </div>
         </div>
-         <div id="map"></div>
+        <div id="mapPopups">
+            <div id="redRoadPopup" class="hidden">
+                <div class="popup">
+                    <p><span class="red">Red roads</span> are freeways.</p>
+                    <i class="fa-solid fa-xmark" id="hideRedPopup"></i>
+                </div>
+            </div>
+            <div id="orangeRoadPopup" class="hidden">
+                <div class="popup">
+                    <p><span class="orange">Orange roads</span> are main roads.</p>
+                    <i class="fa-solid fa-xmark" id="hideOrangePopup"></i>
+                </div>
+            </div>
+        </div>
+        <div id="mapWithSidebar">
+            <div id="sidebar">
+                <i class="fa-solid fa-car fa-4x" id="sidebarCarIcon"></i>
+                <div id="routeOption1">
+                    <h2>Route</h2>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+        <button id="nextButtonMap"><i class="fa-solid fa-arrow-right fa-2x"></i></button>
+        
     </main>
 
 
