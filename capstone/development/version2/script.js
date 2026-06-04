@@ -13,7 +13,6 @@
                     "tripgoApiKey": "2ffb9cdfc1b2d305f9145d692aaddc6d"
                  }
 
-    // L.tripgoRouting.mapLayer.initialize(options); 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -43,17 +42,38 @@
     let locationSearchOverlay = document.querySelector("#locationSearchOverlay");
 
 
-    findRoutesButton.addEventListener("click", function () {
+    locationSearchOverlay.addEventListener("submit", function (event) {
+        event.preventDefault();
         document.querySelector("#map").style.filter = "none";
         locationSearchOverlay.style.display = "none";
         document.querySelector("#sidebar").style.display = "block";
         setTimeout(() => {
-            document.querySelector("#redRoadPopup").style.display = "block";
+            document.querySelector("#redRoadPopup").className = "";
             setTimeout(() => {
-                document.querySelector("#orangeRoadPopup").style.display = "block";
+                document.querySelector("#orangeRoadPopup").className = "";
                 map.fitBounds(polyline.getBounds());
+                document.querySelector("#nextButtonMap").className = "";
             }, 500);
         }, 500);
+    });
+
+    document.querySelector("#hideRedPopup").addEventListener("click", function () {
+        document.querySelector("#redRoadPopup").className = "hidden";
+    });
+
+    document.querySelector("#hideOrangePopup").addEventListener("click", function () {
+        document.querySelector("#orangeRoadPopup").className = "hidden";
+    });
+
+    document.querySelector("#nextButtonMap").addEventListener("click", function () {
+        document.querySelector("#mapScreen").className = "hidden";
+        document.querySelector("#storyScreen").className = "";
+        document.querySelector("#nextButtonStory").className = "";
+    });
+
+    document.querySelector("#nextButtonStory").addEventListener("click", function () {
+        document.querySelector("#storyScreen").className = "hidden";
+        document.querySelector("#newsScreen").className = "";
     });
 
 
