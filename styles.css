@@ -12,12 +12,18 @@ img {
 /* Page styling */
 body {
     background-color: #333;
-    color: rgb(235, 235, 235);
+    background-image: url(images/bgDark.svg);
+    background-size: cover;
+    color: #333;
     transition: all 2s;
+    font-family: "Gaegu";
+    overflow: hidden;
+    height: 100dvh;
 }
 
 body.switch {
     background-color: rgb(235, 235, 235);
+    background-image: url(images/bgLight.svg);
     color: #333;
 }
 
@@ -28,30 +34,22 @@ body.switch {
     /* make sure the columns don't get too small and text stays readable */
     min-width: 900px;
     margin: 1em auto;
-    padding-top: 2em;
 }
 
 header {
     margin: 0 auto 2em auto;
 }
 
-#banner {
-    position: relative;
-    display: flex;
-    width: 1100px;
-    height: 250px;
-    margin: auto;
-    background-color: rgb(235, 235, 235);
-    color: #333;
-    overflow: hidden;
-    display: grid;
-	place-items: center;
+h2 {
+    margin-top: 0px;
+    text-align: right;
+    color: #9FA4CA;
+    margin-right: 30px;
+    margin-top: 20px;
 }
 
-#banner.switch {
-    background-color: #333;
-    color: rgb(235, 235, 235);
-    transition: all 2s;
+h2.switch {
+    color: #9A8A6C;
 }
 
 main {
@@ -62,19 +60,94 @@ main {
 
 main section {
     flex: 1;
-    border: 1px rgb(235, 235, 235) dashed;
     margin: 0 .25em;
     padding: 1em;
+    padding-bottom: 0px;
+    position: absolute;
+    left: 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+#metalGrid {
+    position: absolute;
+    z-index: -2;
+    left: 150px;
+    top: 50px;
+}
+
+#corkBoard {
+    position: absolute;
+    z-index: -1;
+    left: 400px;
+    top: 120px;
+}
+
+#lightString {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    z-index: 2;
+}
+
+#darkFilter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-image: url(images/darkFilter.svg);
+    display: none;
+    pointer-events: none;
+}
+
+
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 0px;
 }
 
 a {
     text-decoration: none;
+    font-size: 1.3rem;
 }
 
 nav ol, nav ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+}
+
+#projects {
+    left: 430px;
+    top: 190px;
+    background-color: #CCD7F9;
+}
+
+#toolKit {
+    left: 440px;
+    top: 470px;
+    background-color: #F4D2F8;
+}
+
+#research {
+    left: 680px;
+    top: 240px;
+    background-color: #F6FBAA;
+}
+
+#development {
+    left: 980px;
+    top: 200px;
+    background-color: #BDF9E8;
+}
+
+#capstone {
+    left: 850px;
+    top: 510px;
+    background-color: #FFC5BD;
 }
 
 section li {
@@ -85,11 +158,12 @@ section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: orange;
+    color: #333;
 }
 
 section a:hover {
-    background-color: orange;
+    background-color: #FFFFFF;
+    border-radius: 10px;
     color: #333;
 }
 
@@ -100,29 +174,27 @@ section.switch a {
 section.switch a:hover {
     background-color: #333;
     color: rgb(235, 235, 235);
+    border-radius: 10px;
 }
 
 button {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 12px;
-    background-color: orange;
+    top: -5px;
+    left: 20px;
     color: #333;
-    border: 1px solid transparent;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    z-index: 3;
 }
 
 button:hover {
-    background-color: coral;
     cursor: pointer;
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
     border-color: #333;
 }
 
 button.switch:hover {
-    background-color: #333;
     color: rgb(235, 235, 235)
 }

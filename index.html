@@ -9,6 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
     <!-- Add link to any google fonts used here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
 
     <!-- My Styles -->
     <link href="styles.css" rel="stylesheet">
@@ -21,26 +24,27 @@
 
 </head>
 
-<body>
+<body class="switch">
+
+    <div id="darkFilter"></div>
 
     <div id="container">
 
         <header>
 
-            <h1>Stacy Phan</h1>
-
-            <h2>DES 157B - Interactive Media III - (term, year & section)</h2>
-
-            <!--this is for the interactive banner-->
-            <div id="banner">
-                <h3>This is my banner!</h3>
-            </div>
+            <h2 class="switch">Stacy Phan - DES 157B - Interactive Media III - Spring 2026</h2>
 
         </header>
 
         <main>
 
-            <section id="projects">
+            <div id="background">
+                <img src="images/metalGrid.svg" id="metalGrid">
+                <img src="images/corkBoard.svg" id="corkBoard">
+                <img src="images/lightStringOff.svg" id="lightString">
+            </div>
+
+            <section id="projects" class="switch">
 
                 <h3>Ministudios</h3>
                 <nav>
@@ -50,6 +54,10 @@
                         <li><a href="libraryLiberty/index.html">Library Liberty</a></li>
                     </ol>
                 </nav>
+
+            </section>
+
+            <section id="toolKit" class="switch">
                 <h3>Toolkit</h3>
                 <nav>
                     <ol>
@@ -58,14 +66,15 @@
                         <li><a href="arrowFunctions/arrowfunctions.html">Arrow Functions</a></li>
                     </ol>
                 </nav>
-
             </section>
 
-            <section id="research">
+            <section id="research" class="switch">
                 <h3>Research</h3>
                 <nav>
                     <ul>
-                        <li><a href="https://www.figma.com/board/xbIwqz7tfwom3tYJQnyRrO/Capstone-Project-Brainstorming--Copy-?node-id=0-1&t=0fbeHeXEvSX7j0AM-1">Brainstorm</a></li>
+                        <li><a
+                                href="https://www.figma.com/board/xbIwqz7tfwom3tYJQnyRrO/Capstone-Project-Brainstorming--Copy-?node-id=0-1&t=0fbeHeXEvSX7j0AM-1">Brainstorm</a>
+                        </li>
                         <li><a href="comparativeAnalysis/Comparative Analysis.pdf">Comparative Analysis</a></li>
                         <li><a href="anotatedBibliography/index.html">Annotated Bibliography</a></li>
                         <li><a href="feasibilityReport/Feasibility Report.pdf">Feasibility Report</a></li>
@@ -74,7 +83,7 @@
 
             </section>
 
-            <section id="development">
+            <section id="development" class="switch">
                 <h3>Development</h3>
                 <nav>
                     <ul>
@@ -86,7 +95,7 @@
                 </nav>
             </section>
 
-            <section id="capstone">
+            <section id="capstone" class="switch">
                 <h3>Capstone</h3>
                 <nav>
                     <ul>
@@ -96,7 +105,7 @@
                 </nav>
             </section>
 
-            <button>switch</button>
+            <button><img src="images/forwardBtn.svg"></button>
 
         </main>
 
