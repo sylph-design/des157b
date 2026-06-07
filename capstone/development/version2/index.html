@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet"/>
@@ -20,7 +20,7 @@
      <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 
-    <title>Capstone V1</title>
+    <title>Capstone V2</title>
 </head>
 <body>
     
@@ -59,7 +59,7 @@
             <div id="mapWithSidebar">
                 <div id="sidebar">
                     <i class="fa-solid fa-car fa-4x" id="sidebarCarIcon"></i>
-                    <div>
+                    <div id="routeLocations">
                         <p>6525 Normandie Ave, Los Angeles, CA 90044</p>
                         <p>707 S Broadway, Los Angeles, CA 90014</p>
                     </div>
@@ -82,10 +82,77 @@
         </div>
 
         <div id="newsScreen" class="hidden">
-            <div>
-
+            <div id="tabletArea">
+                <div id="tablet">
+                    <button id="tabletButton"></button>
+                    <div id="dateTime">
+                        <p>September 26th, 2024</p>
+                        <p>9:35PM</p>
+                    </div>
+                    <div id="weather">
+                        <div id="weatherToday">
+                            <i class="fa-solid fa-sun fa-5x"></i>
+                            <div id="weatherInfo">
+                                <p>80°</p>
+                                <p>AQI 20</p>
+                            </div>
+                        </div>
+                        <div id="weatherWeek">
+                            <div id="weekDate">
+                                <p>9/27</p>
+                                <p>9/28</p>
+                                <p>9/29</p>
+                                <p>9/30</p>
+                                <p>10/1</p>
+                            </div>
+                            <div id="weekIcon">
+                                <i class="fa-solid fa-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-sun fa-2x"></i>
+                            </div>
+                            <div id="weekTemp">
+                                <p>81°</p>
+                                <p>78°</p>
+                                <p>83°</p>
+                                <p>82°</p>
+                                <p>84°</p>
+                            </div>
+                            <div id="weekAQI">
+                                <p>AQI 21</p>
+                                <p>AQI 22</p>
+                                <p>AQI 20</p>
+                                <p>AQI 20</p>
+                                <p>AQI 19</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bankAccount">
+                        <h3>4920 Checking Acc.</h3>
+                        <h4>$376</h4>
+                        <p>Balance</p>
+                    </div>
+                    <div id="steps">
+                        <p id="stepsTaken">3,204</p>
+                        <p id="maxSteps">/ 10,000</p>
+                        <i class="fa-solid fa-shoe-prints fa-rotate-270 fa-2x"></i>
+                    </div>
+                    <div id="gasPrice">
+                        <i class="fa-solid fa-gas-pump fa-2x"></i>
+                        <p>$3.30/gal</p>
+                    </div>
+                    <div id="newsArticle">
+                        <h3>FATAL CAR ACCIDENT ON THE CA-110</h3>
+                        <p>Three cars involved in drunk driving incident. 2 casualties and one hospitalization. Fire from electric car battery took hours to extinguish.</p>
+                    </div>
+                </div>
             </div>
-            <button id="nextButtonNews" class="hidden"><i class="fa-solid fa-arrow-right fa-2x"></i></button>
+            
+            <button id="nextButtonNews" class="hidden">
+                <p>Next Day</p>
+                <i class="fa-solid fa-arrow-right fa-2x"></i>
+            </button>
         </div>
 
         <div id="dataScreen">

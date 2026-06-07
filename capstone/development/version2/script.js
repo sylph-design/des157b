@@ -74,6 +74,7 @@
     document.querySelector("#nextButtonStory").addEventListener("click", function () {
         document.querySelector("#storyScreen").className = "hidden";
         document.querySelector("#newsScreen").className = "";
+        document.querySelector("#nextButtonNews").className = "";
     });
 
 
