@@ -29,19 +29,19 @@
     <main>
 
         <div id="transitionScreen" class="hidden"></div>
-        <img src="assets/questionmark.svg" id="questionButton" class="hidden">
+        <img src="assets/questionmark.svg" id="questionButton" class="hidden" alt="question mark button">
 
         <div id="mapScreen">
             <form id="locationSearchOverlay">
                 <h1>What will it take to get to work today?</h1>
                 <label>Location A</label>
                 <br><select id="addressInputA" required>
-                    <option value=""></option>
+                    <option value="" label=" "></option>
                     <option value="a">[HOME] 6525 Normandie Ave, Los Angeles, CA 90044</option>
                 </select>
                 <br><label>Location B</label>
                 <br><select id="addressInputB" required>
-                    <option value=""></option>
+                    <option value="" label=" "></option>
                     <option value="b">[WORK] 707 S Broadway, Los Angeles, CA 90014</option>
                 </select>
                 <div id="buttonAlignment">
@@ -66,9 +66,9 @@
                 <div id="sidebar">
                     <i class="fa-solid fa-car fa-4x" id="sidebarCarIcon"></i>
                     <div id="routeLocations">
-                        <h5>Location A</h5>
+                        <h2>Location A</h2>
                         <p>6525 Normandie Ave, Los Angeles, CA 90044</p>
-                        <h5>Location B</h5>
+                        <h2>Location B</h2>
                         <p>707 S Broadway, Los Angeles, CA 90014</p>
                     </div>
                     <div id="routeOption1">
@@ -83,30 +83,30 @@
             </div>
             <div id="mapButtonArea" class="hidden">
                 <button id="nextButtonMap">
-                    <p>Go</p>
-                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                    Go
+                    <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
 
         </div>
 
         <div id="storyScreen" class="hidden">
-            <img id="storyImg">
+            <img id="storyImg" src="assets/transparent.png" alt="illustration of story">
             <p id="storyText"></p>
             <button id="nextButtonStory" class="hidden">
-                <p>Go Home</p>
-                <i class="fa-solid fa-arrow-right fa-2x"></i>
+                Go Home
+                <i class="fa-solid fa-arrow-right"></i>
             </button>
             <div id="buttonHeartArea" class="hidden">
                 <button id="nextButtonStoryHeart">
-                    <p>Get Help</p>
-                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
             <div id="buttonHeartArea2" class="hidden">
                 <button id="nextButtonStoryHeart2">
-                    <p>End</p>
-                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                    End
+                    <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </div>
@@ -183,8 +183,8 @@
 
             <div id="newsButtonArea">
                 <button id="nextButtonNews" class="hidden">
-                    <p>Next Day</p>
-                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                    Next Day
+                    <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
 
@@ -213,7 +213,7 @@
         </div>
         <div id="different">
             <button id="differentButton">
-                <p>What if things were different?</p>
+                What if things were different?
             </button>
         </div>
     </div>
