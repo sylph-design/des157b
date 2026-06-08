@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
+    <script src="../../../node_modules/leaflet.motion/dist/leaflet.motion.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <title>What Will It Take?</title>
+</head>
+
+<body>
+
+    <main>
+
+        <div id="transitionScreen" class="hidden"></div>
+        <img src="assets/questionmark.svg" id="questionButton" class="hidden">
+
+        <div id="mapScreen">
+            <form id="locationSearchOverlay">
+                <h1>What will it take to get to work today?</h1>
+                <label>Location A</label>
+                <br><select id="addressInputA" required>
+                    <option value=""></option>
+                    <option value="a">[HOME] 6525 Normandie Ave, Los Angeles, CA 90044</option>
+                </select>
+                <br><label>Location B</label>
+                <br><select id="addressInputB" required>
+                    <option value=""></option>
+                    <option value="b">[WORK] 707 S Broadway, Los Angeles, CA 90014</option>
+                </select>
+                <div id="buttonAlignment">
+                    <button id="findRoutesButton" type="submit">Find Routes</button>
+                </div>
+            </form>
+            <div id="mapPopups">
+                <div id="redRoadPopup" class="hidden">
+                    <div class="popup">
+                        <p><span class="red">Red roads</span> are freeways.</p>
+                        <i class="fa-solid fa-xmark" id="hideRedPopup"></i>
+                    </div>
+                </div>
+                <div id="orangeRoadPopup" class="hidden">
+                    <div class="popup">
+                        <p><span class="orange">Orange roads</span> are main roads.</p>
+                        <i class="fa-solid fa-xmark" id="hideOrangePopup"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="mapWithSidebar">
+                <div id="sidebar">
+                    <i class="fa-solid fa-car fa-4x" id="sidebarCarIcon"></i>
+                    <div id="routeLocations">
+                        <h5>Location A</h5>
+                        <p>6525 Normandie Ave, Los Angeles, CA 90044</p>
+                        <h5>Location B</h5>
+                        <p>707 S Broadway, Los Angeles, CA 90014</p>
+                    </div>
+                    <div id="routeOption1">
+                        <h2>Best Route</h2>
+                        <p>6.2 Miles</p>
+                        <p>2440g of CO2</p>
+                        <p>Cost: $10.17</p>
+                        <p>Est. Time: 12 minutes</p>
+                    </div>
+                </div>
+                <div id="map"></div>
+            </div>
+            <div id="mapButtonArea" class="hidden">
+                <button id="nextButtonMap">
+                    <p>Go</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="storyScreen" class="hidden">
+            <img id="storyImg">
+            <p id="storyText"></p>
+            <button id="nextButtonStory" class="hidden">
+                <p>Go Home</p>
+                <i class="fa-solid fa-arrow-right fa-2x"></i>
+            </button>
+            <div id="buttonHeartArea" class="hidden">
+                <button id="nextButtonStoryHeart">
+                    <p>Get Help</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+            <div id="buttonHeartArea2" class="hidden">
+                <button id="nextButtonStoryHeart2">
+                    <p>End</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="newsScreen" class="hidden">
+            <div id="tabletArea">
+                <div id="tablet" class="fadeInUp">
+                    <div id="offScreen"></div>
+                    <button id="tabletButton"></button>
+                    <div id="dateTime">
+                        <p>September 26th, 2024</p>
+                        <p>9:35PM</p>
+                    </div>
+                    <div id="weather">
+                        <div id="weatherToday">
+                            <i class="fa-solid fa-sun fa-5x"></i>
+                            <div id="weatherInfo">
+                                <p>80°</p>
+                                <p>AQI 20</p>
+                            </div>
+                        </div>
+                        <div id="weatherWeek">
+                            <div id="weekDate">
+                                <p>9/27</p>
+                                <p>9/28</p>
+                                <p>9/29</p>
+                                <p>9/30</p>
+                                <p>10/1</p>
+                            </div>
+                            <div id="weekIcon">
+                                <i class="fa-solid fa-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-cloud-sun fa-2x"></i>
+                                <i class="fa-solid fa-sun fa-2x"></i>
+                            </div>
+                            <div id="weekTemp">
+                                <p>81°</p>
+                                <p>78°</p>
+                                <p>83°</p>
+                                <p>82°</p>
+                                <p>84°</p>
+                            </div>
+                            <div id="weekAQI">
+                                <p>AQI 21</p>
+                                <p>AQI 22</p>
+                                <p>AQI 20</p>
+                                <p>AQI 20</p>
+                                <p>AQI 19</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bankAccount">
+                        <h3>4920 Checking Acc.</h3>
+                        <h4>$376</h4>
+                        <p>Balance</p>
+                    </div>
+                    <div id="steps">
+                        <p id="stepsTaken">3,204</p>
+                        <p id="maxSteps">/ 10,000</p>
+                        <i class="fa-solid fa-shoe-prints fa-rotate-270 fa-2x"></i>
+                    </div>
+                    <div id="gasPrice">
+                        <i class="fa-solid fa-gas-pump fa-2x"></i>
+                        <p>$3.30/gal</p>
+                    </div>
+                    <div id="newsArticle">
+                        <h3>FATAL CAR ACCIDENT ON THE CA-110</h3>
+                        <p>Three cars involved in drunk driving incident. 2 casualties and one hospitalization. Fire
+                            from electric car battery took hours to extinguish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="newsButtonArea">
+                <button id="nextButtonNews" class="hidden">
+                    <p>Next Day</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div id="dataScreen" class="hidden">
+        <div id="dataFirst">
+            <h1>Cars are killing us.</h1>
+            <p id="scrollInfo">Scroll for more...</p>
+        </div>
+        <div id="dataFact1">
+            <div id="peopleGrid">
+            </div>
+            <p><strong>110</strong> people die from motor vehicles every day.</p>
+        </div>
+        <div id="dataFact2">
+            <i class="fa-solid fa-smog fa-4x"></i>
+            <p><strong>28%</strong> of US carbon emissions come from transportation. Roughly 1.8 gigatonnes of carbon
+                dioxide per year.</p>
+        </div>
+        <div id="dataFact3">
+            <i class="fa-solid fa-money-bills fa-4x"></i>
+            <p>Low-income households on average spend <strong>30%</strong> of their income on transportation.</p>
+        </div>
+        <div id="different">
+            <button id="differentButton">
+                <p>What if things were different?</p>
+            </button>
+        </div>
+    </div>
+
+    <div id="endingScreen" class="hidden">
+        <div id="endingFirst">
+            <h1>There's another route we can take.</h1>
+        </div>
+        <div id="endingFact1">
+            <i class="fa-solid fa-user-injured fa-4x"></i>
+            <p>Public transit reduces accident rate by more than 90%.</p>
+        </div>
+        <div id="endingFact2">
+            <i class="fa-solid fa-smog fa-4x"></i>
+            <p>Public transit saves 37,000,000 metric tonnes of carbon dioxide annually.</p>
+        </div>
+        <div id="endingFact3">
+            <i class="fa-solid fa-hand-holding-dollar fa-4x"></i>
+            <p>Households can save $13,000 annually by using public transit.</p>
+        </div>
+        <div id="endingLast">
+            <h1>Support Public Transit.</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
