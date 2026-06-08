@@ -14,10 +14,11 @@
 
     <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
 
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-     <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/01928e97f1.js" crossorigin="anonymous"></script>
+    <script src="../../../node_modules/leaflet.motion/dist/leaflet.motion.min.js"></script>
     <script src="script.js" defer></script>
 
     <title>Capstone V2</title>
@@ -25,19 +26,22 @@
 <body>
     
     <main>
+
+        <div id="transitionScreen" class="hidden"></div>
+
         <div id="mapScreen">
             <form id="locationSearchOverlay">
                 <h1>What will it take to get to work today?</h1>
                 <label>Location A</label>
-                <br><input type="text" list="locationA" id="addressInputA" required>
+                <br><select id="addressInputA" required>
+                    <option value=""></option>
+                    <option value="a">[HOME] 6525 Normandie Ave, Los Angeles, CA 90044</option>
+                </select>
                 <br><label>Location B</label>
-                <br><input type="text" list="locationB" id="addressInputB" required>
-                <datalist id="locationA">
-                    <option>[HOME] 6525 Normandie Ave, Los Angeles, CA 90044</option>
-                </datalist>
-                <datalist id="locationB">
-                    <option>[WORK] 707 S Broadway, Los Angeles, CA 90014</option>
-                </datalist>
+                <br><select id="addressInputB" required>
+                    <option value=""></option>
+                    <option value="b">[WORK] 707 S Broadway, Los Angeles, CA 90014</option>
+                </select>
                 <div id="buttonAlignment">
                     <button id="findRoutesButton" type="submit">Find Routes</button>
                 </div>
@@ -60,30 +64,43 @@
                 <div id="sidebar">
                     <i class="fa-solid fa-car fa-4x" id="sidebarCarIcon"></i>
                     <div id="routeLocations">
+                        <h5>Location A</h5>
                         <p>6525 Normandie Ave, Los Angeles, CA 90044</p>
+                        <h5>Location B</h5>
                         <p>707 S Broadway, Los Angeles, CA 90014</p>
                     </div>
                     <div id="routeOption1">
                         <h2>Best Route</h2>
-                        <p>Gas $12.00</p>
-                        <p>400g of CO2</p>
+                        <p>6.2 Miles</p>
+                        <p>2440g of CO2</p>
+                        <p>Cost: $10.17</p>
                         <p>Est. Time: 12 minutes</p>
                     </div>
                 </div>
                 <div id="map"></div>
             </div>
-            <button id="nextButtonMap" class="hidden"><i class="fa-solid fa-arrow-right fa-2x"></i></button>
+            <div id="mapButtonArea" class="hidden">
+                <button id="nextButtonMap">
+                    <p>Go</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+            
         </div>
 
         <div id="storyScreen" class="hidden">
-            <img class="storyImg">
-            <p>Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. Filler text. </p>
-            <button id="nextButtonStory" class="hidden"><i class="fa-solid fa-arrow-right fa-2x"></i></button>
+            <img id="storyImg">
+            <p id="storyText"></p>
+            <button id="nextButtonStory" class="hidden">
+                <p>Go Home</p>
+                <i class="fa-solid fa-arrow-right fa-2x"></i>
+            </button>
         </div>
 
         <div id="newsScreen" class="hidden">
             <div id="tabletArea">
-                <div id="tablet">
+                <div id="tablet" class="fadeInUp">
+                    <div id="offScreen"></div>
                     <button id="tabletButton"></button>
                     <div id="dateTime">
                         <p>September 26th, 2024</p>
@@ -149,10 +166,13 @@
                 </div>
             </div>
             
-            <button id="nextButtonNews" class="hidden">
-                <p>Next Day</p>
-                <i class="fa-solid fa-arrow-right fa-2x"></i>
-            </button>
+            <div id="newsButtonArea">
+                <button id="nextButtonNews" class="hidden">
+                    <p>Next Day</p>
+                    <i class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+            
         </div>
 
         <div id="dataScreen">

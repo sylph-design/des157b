@@ -9,6 +9,28 @@ body {
     display: none;
 }
 
+.leaflet-div-icon {
+				background: transparent!important;
+				border: none!important;
+				color: black;
+			}
+
+#transitionScreen {
+    height: 120dvh;
+    width: 120dvw;
+    background-color: #000;
+    transition: all 1s;
+}
+
+.fadeToBlack {
+    animation: fadeToBlack 1s;
+    animation-fill-mode: both;
+}
+
+main {
+    overflow: hidden;
+}
+
 
 /* MAP SCREEN */
 
@@ -24,6 +46,23 @@ body {
 h1 {
     font-weight: 600;
     font-size: 2.5rem;
+    transition: all 1s;
+    animation: fadeInDown 2s ease-in-out;
+    will-change: transform, opacity;
+}
+
+#addressInputA {
+    opacity: 0;
+    animation: fadeInDown 1s 2s;
+    will-change: transform, opacity;
+    animation-fill-mode: both;
+}
+
+#addressInputB {
+    opacity: 0;
+    animation: fadeInDown 1s 2.5s;
+    will-change: transform, opacity;
+    animation-fill-mode: both;
 }
 
 input {
@@ -36,6 +75,23 @@ input {
     margin-bottom: 15px;
 }
 
+select {
+    font-size: 1rem;
+    padding: 10px 50px 10px 15px;
+    border-radius: 30px;
+    outline: none;
+    border: #DDDDDD solid 2px;
+    width: 630px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+#locationSearchOverlay label {
+    animation: fadeInDown 1s 3.5s;
+    will-change: transform, opacity;
+    animation-fill-mode: both;
+}
+
 #buttonAlignment {
     position: relative;
 }
@@ -46,10 +102,15 @@ input {
     position: absolute;
     margin-top: 10px;
     left: 80%;
+    animation: fadeInUp 1s 3.5s;
+    will-change: transform, opacity;
+    animation-fill-mode: both;
 }
 
 #mapWithSidebar {
     display: flex;
+    transition: all 1s;
+    background-color: #333;
 }
 
 #sidebar {
@@ -58,6 +119,8 @@ input {
     display: none;
     width: 400px;
     box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.25);
+    animation: slideRight 1s ease-in-out;
+    background-color: #FFF;
 }
 
 #sidebarCarIcon {
@@ -74,6 +137,14 @@ input {
     padding: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: 0;
+}
+
+#routeLocations h5 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin: 0;
+    margin-left: 20px;
 }
 
 #mapPopups {
@@ -89,11 +160,12 @@ input {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    background-color: #EEEEEE;
+    background-color: #FFF;
     padding: 0px 20px 0px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.25);
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .fa-xmark {
@@ -118,6 +190,7 @@ input {
     width: 100dvw;
     z-index: 1;
     flex-grow: 2;
+    transition: all 1s;
 }
 
 #nextButtonMap {
@@ -126,18 +199,30 @@ input {
     right: 90px;
     z-index: 2;
     border-radius: 50px;
-    width: 60px;
+    width: 110px;
     height: 60px;
     border: none;
     box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.25);
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeInDown 1s;
+}
+
+#nextButtonMap p {
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 #nextButtonMap:hover {
     cursor: pointer;
+    background-color: #eee;
 }
 
 #routeOption1 {
-    border-left: green 8px solid;
+    border-left: #2235c7 8px solid;
     padding-left: 10px;
     padding-bottom: 1px;
 }
@@ -157,9 +242,10 @@ input {
     padding-top: 100px;
 }
 
-.storyImg {
-    width: 500px;
-    height: 200px;
+#storyImg {
+    width: 700px;
+    height: 300px;
+    background-image: url(assets/storyCars.png);
     background-color: black;
     margin: auto;
     display: flex;
@@ -176,22 +262,32 @@ input {
     right: 90px;
     z-index: 2;
     border-radius: 50px;
-    width: 60px;
+    width: 180px;
     height: 60px;
     border: none;
     box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeInUp 1s;
 }
 
 #nextButtonStory:hover {
     cursor: pointer;
 }
 
+#nextButtonStory p {
+    font-size: 1.5rem;
+    margin: 0;
+}
 
 
 /* NEWS SCREEN */
 
 #newsScreen {
-    background-color: #be3;
+    background-image: url(assets/livingroomBG.png);
+    background-size: cover;
     height: 100dvh;
 }
 
@@ -205,7 +301,7 @@ input {
 #tablet {
     width: 700px;
     height: 400px;
-    background-color: #ff3;
+    background-color: #281733;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -215,6 +311,8 @@ input {
     border: 20px solid #333;
     border-bottom: 50px solid #333;
     position: relative;
+    color: #FFF;
+    box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.5);
 }
 
 #tabletButton {
@@ -227,11 +325,31 @@ input {
     left: 50%;
 }
 
+#offScreen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #111;
+    z-index: 5;
+}
+
+.fadeInUp {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.fadeInDown {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+
 #dateTime {
     grid-column: span 3 / span 3;
     grid-column-start: 1;
     grid-row-start: 1;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
     height: 50px;
     display: flex;
@@ -244,7 +362,7 @@ input {
     grid-row: span 3 / span 3;
     grid-column-start: 1;
     grid-row-start: 2;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
 }
 
@@ -309,7 +427,7 @@ input {
     grid-row: span 2 / span 2;
     grid-column-start: 2;
     grid-row-start: 2;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -334,7 +452,7 @@ input {
 #steps {
     grid-column-start: 2;
     grid-row-start: 4;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -366,7 +484,7 @@ input {
 #gasPrice {
     grid-column-start: 3;
     grid-row-start: 2;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -383,7 +501,7 @@ input {
     grid-row: span 2 / span 2;
     grid-column-start: 3;
     grid-row-start: 3;
-    background-color: beige;
+    background-color: #5f3573;
     border-radius: 10px;
 }
 
@@ -417,4 +535,53 @@ h3 {
 #nextButtonNews p {
     font-size: 1.5rem;
     margin: 0;
+}
+
+
+
+
+/* ANIMATIONS */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate(0px, -50px);
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(0px, 50px);
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translate(-500px, 0px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg)}
+    25% { transform: rotate(5deg)}
+    50% { transform: rotate(-5deg)}
+    75% { transform: rotate(3deg)}
+    100% {transform: rotate(0deg)}
+}
+
+@keyframes fadeToBlack {
+    0% {background-color: transparent}
+    100% {background-color: #ab797d}
 }
