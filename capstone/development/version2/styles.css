@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Afacad";
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .hidden {
@@ -27,8 +27,16 @@ body {
     animation-fill-mode: both;
 }
 
+.fadeToBlackReal {
+    animation: fadeToBlackReal 1s;
+    animation-fill-mode: both;
+}
+
 main {
     overflow: hidden;
+    background-color: #000;
+    height: 100dvh;
+    width: 100dvw;
 }
 
 
@@ -232,6 +240,17 @@ select {
     font-weight: 400;
 }
 
+#routeOption2 {
+    border-left: green 8px solid;
+    padding-left: 10px;
+    padding-bottom: 1px;
+}
+
+#routeOption2 h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 
 
 /* STORY SCREEN */
@@ -282,6 +301,32 @@ select {
     margin: 0;
 }
 
+#nextButtonStoryHeart {
+    position: absolute;
+    bottom: 70px;
+    right: 90px;
+    z-index: 2;
+    border-radius: 50px;
+    width: 180px;
+    height: 60px;
+    border: none;
+    box-shadow: 0px 4px 16px -3px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeInUp 1s;
+}
+
+#nextButtonStoryHeart:hover {
+    cursor: pointer;
+}
+
+#nextButtonStoryHeart p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
 
 /* NEWS SCREEN */
 
@@ -289,6 +334,11 @@ select {
     background-image: url(assets/livingroomBG.png);
     background-size: cover;
     height: 100dvh;
+}
+
+.blur {
+    animation: blur 5s;
+    animation-fill-mode: both;
 }
 
 #tabletArea {
@@ -537,6 +587,110 @@ h3 {
     margin: 0;
 }
 
+#questionButton {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+#questionButton:hover {
+    cursor: pointer;
+}
+
+
+/* DATA SCREEN */
+
+#dataScreen {
+    color: #FFF;
+    z-index: 5;
+    background-color: #000;
+}
+
+#scrollInfo {
+    animation: fadeInDown 2s 2s;
+    animation-fill-mode: both;
+}
+
+#dataFirst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+#dataFact1 {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#dataFact2 {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#dataFact3 {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#different {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#different button {
+    width: fit-content;
+    font-family: "Afacad";
+    font-size: 1.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 80px;
+    border: none;
+}
+
+#different button:hover {
+    cursor: pointer;
+}
+
+#peopleGrid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    margin-left: 200px;
+    margin-right: 200px;
+    gap: 10px;
+}
+
+#dataFact1 p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 80px;
+}
+
+#dataFact2 p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 80px;
+}
+
+#dataFact3 p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 80px;
+}
 
 
 
@@ -584,4 +738,18 @@ h3 {
 @keyframes fadeToBlack {
     0% {background-color: transparent}
     100% {background-color: #ab797d}
+}
+
+@keyframes fadeToBlackReal {
+    0% {background-color: transparent}
+    100% {background-color: #000}
+}
+
+@keyframes blur {
+    0% {filter: blur(0px)}
+    20% {filter: blur(2px)}
+    50% {filter: blur(7px)}
+    60% {filter: blur(1px)}
+    80% {filter: blur(5px)}
+    100% {filter: blur(10px)}
 }
